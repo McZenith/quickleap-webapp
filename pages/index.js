@@ -17,8 +17,8 @@ export default () => (
       <Menu label="account" items={[{ label: "logout" }]} />
     </Header>
     <Main background="brand">
-      <Box background="brand" height="75vh" fill="horizontal"></Box>
+      <Box background="brand" height="80vh" fill="horizontal"></Box>
     </Main>
-    <Footer background="accent-3" height="15vh"></Footer>
+    <Footer background="accent-3" height="10vh"></Footer>
   </Box>
 );
