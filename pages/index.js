@@ -1,12 +1,24 @@
-import React from 'react'
-import { Anchor, Box, Heading, Paragraph } from 'grommet'
+import {
+  Main,
+  Box,
+  Header,
+  Menu,
+  Paragraph,
+  Heading,
+  Footer,
+  Text,
+  Anchor,
+} from "grommet";
 
 export default () => (
-  <Box align="center" margin="large">
-    <Heading>Grommet is awesome!</Heading>
-    <Paragraph>
-      Find out more at{' '}
-      <Anchor href="https://v2.grommet.io/">https://v2.grommet.io/</Anchor>
-    </Paragraph>
+  <Box>
+    <Header background="accent-1" fill="horizontal" height="10vh">
+      <Menu label="account" items={[{ label: "logout" }]} />
+      <Menu label="account" items={[{ label: "logout" }]} />
+    </Header>
+    <Main background="brand">
+      <Box background="brand" height="75vh" fill="horizontal"></Box>
+    </Main>
+    <Footer background="accent-3" height="15vh"></Footer>
   </Box>
-)
+);
