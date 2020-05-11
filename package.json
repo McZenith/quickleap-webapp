@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "grommet": "^2.13.0",
+    "grommet-icons": "^4.4.0",
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
