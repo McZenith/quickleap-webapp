@@ -12,6 +12,7 @@ import {
   Layer,
   ResponsiveContext,
   Carousel,
+  Button,
 } from "grommet";
 import { Menu } from "grommet-icons";
 
@@ -106,6 +107,7 @@ const Home = () => {
               <p style={{ textAlign: "center" }}>
                 lorem ipsum adn hsnw b dhhheheh hddhd d
               </p>
+              <Button label="show" onClick={() => setShow(true)} />
             </Box>
             <Box
               background={{
@@ -124,6 +126,7 @@ const Home = () => {
               <p style={{ textAlign: "center" }}>
                 lorem ipsum adn hsnw b dhhheheh hddhd d
               </p>
+              <Button label="show" onClick={() => setShow(true)} />
             </Box>
           </Carousel>
         </Box>
