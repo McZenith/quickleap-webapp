@@ -9,10 +9,10 @@
   "dependencies": {
     "grommet": "^2.13.0",
     "grommet-icons": "^4.4.0",
-    "infinite-react-carousel": "^1.2.11",
     "next": "latest",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-siema": "^1.0.1",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {

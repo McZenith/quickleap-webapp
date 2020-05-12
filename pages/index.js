@@ -29,7 +29,7 @@ const NavLinks = [
 const Home = () => {
   const size = React.useContext(ResponsiveContext);
   const [show, setShow] = React.useState();
-  const { link } = styles;
+  const { link, footer } = styles;
   return (
     <Box>
       <Header fill="horizontal" height="9vh" pad="medium" elevation="medium">
@@ -84,12 +84,6 @@ const Home = () => {
       <Main>
         <Box height="80vh" fill="horizontal">
           <Carousel fill play={5000} controls="selectors">
-            {/* <Image
-              fit="cover"
-              src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
-            />
-            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
-            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" /> */}
             <Box
               background={{
                 color: "neutral-1",
@@ -131,7 +125,7 @@ const Home = () => {
           </Carousel>
         </Box>
       </Main>
-      <Footer background="accent-1" height="11vh"></Footer>
+      <Footer height="11vh" style={footer}></Footer>
     </Box>
   );
 };
@@ -140,6 +134,10 @@ const styles = {
   link: {
     textDecoration: "none",
     color: "black",
+  },
+  footer: {
+    position: "fixed",
+    bottom: 0,
   },
 };
 

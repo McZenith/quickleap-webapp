@@ -15,6 +15,7 @@ export default class MyApp extends App {
         <Head>
           {/* <title>My page</title> */}
           <link rel="icon" href="/favicon.ico" />
+          <link rel="stylesheet" href="/style.css" />
           <meta
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width"
