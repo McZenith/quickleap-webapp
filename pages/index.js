@@ -3,15 +3,16 @@ import {
   Main,
   Box,
   Header,
-  Menu,
   Paragraph,
   Heading,
   Footer,
   Text,
   Anchor,
   Image,
+  Layer,
   ResponsiveContext,
 } from "grommet";
+import { Menu } from "grommet-icons";
 const NavLinks = [
   { title: "Home" },
   { title: "About" },
@@ -24,6 +25,7 @@ const NavLinks = [
 
 const Home = () => {
   const size = React.useContext(ResponsiveContext);
+  const [show, setShow] = React.useState();
   const { link } = styles;
   return (
     <Box>
@@ -32,13 +34,48 @@ const Home = () => {
           <Image fill src={"./logo.png"} alt="quickleap logo" />
         </Box>
         <Box direction="row" gap="medium">
-          {size === "small"
-            ? <div></div>
-            : NavLinks.map(({ title }, index) => (
-                <Link href={`/${title}`} key={index}>
-                  <a style={link}>{title}</a>
-                </Link>
-              ))}
+          {size === "small" ? (
+            <Box>
+              <Menu
+                size="26px"
+                width="40px"
+                label="show"
+                onClick={() => setShow(true)}
+              />
+              {show && (
+                <Layer
+                  onEsc={() => setShow(false)}
+                  onClickOutside={() => setShow(false)}
+                  position="right"
+                  responsive={false}
+                  animation="slide"
+                >
+                  <Box
+                    label="close"
+                    onClick={() => setShow(false)}
+                    height="100vh"
+                    width="50vw"
+                    direction="column"
+                    round={false}
+                    pad="small"
+                    elevation="medium"
+                  >
+                    {NavLinks.map(({ title }, index) => (
+                      <Link href={`/${title}`} key={index}>
+                        <a style={link}>{title}</a>
+                      </Link>
+                    ))}
+                  </Box>
+                </Layer>
+              )}
+            </Box>
+          ) : (
+            NavLinks.map(({ title }, index) => (
+              <Link href={`/${title}`} key={index}>
+                <a style={link}>{title}</a>
+              </Link>
+            ))
+          )}
         </Box>
       </Header>
       <Main background="brand">
