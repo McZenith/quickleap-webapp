@@ -83,12 +83,48 @@ const Home = () => {
       <Main>
         <Box height="80vh" fill="horizontal">
           <Carousel fill play={5000} controls="selectors">
-            <Image
+            {/* <Image
               fit="cover"
               src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
             />
             <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
-            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
+            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" /> */}
+            <Box
+              background={{
+                color: "neutral-1",
+                position: "center",
+                repeat: "no-repeat",
+                size: "100% 100%",
+                image: "url(//v2.grommet.io/assets/IMG_4210.jpg)",
+              }}
+              justify="center"
+              align="center"
+              fill
+              pad="medium"
+            >
+              <h1>Hello World</h1>
+              <p style={{ textAlign: "center" }}>
+                lorem ipsum adn hsnw b dhhheheh hddhd d
+              </p>
+            </Box>
+            <Box
+              background={{
+                color: "neutral-1",
+                position: "center",
+                repeat: "no-repeat",
+                size: "100% 100%",
+                image: "url(//v2.grommet.io/assets/Wilderpeople_Ricky.jpg)",
+              }}
+              justify="center"
+              align="center"
+              fill
+              pad="medium"
+            >
+              <h1>Random Text</h1>
+              <p style={{ textAlign: "center" }}>
+                lorem ipsum adn hsnw b dhhheheh hddhd d
+              </p>
+            </Box>
           </Carousel>
         </Box>
       </Main>
