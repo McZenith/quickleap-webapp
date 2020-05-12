@@ -11,8 +11,10 @@ import {
   Image,
   Layer,
   ResponsiveContext,
+  Carousel,
 } from "grommet";
 import { Menu } from "grommet-icons";
+
 const NavLinks = [
   { title: "Home" },
   { title: "About" },
@@ -57,7 +59,7 @@ const Home = () => {
                     width="50vw"
                     direction="column"
                     round={false}
-                    pad="small"
+                    pad="medium"
                     elevation="medium"
                   >
                     {NavLinks.map(({ title }, index) => (
@@ -78,8 +80,17 @@ const Home = () => {
           )}
         </Box>
       </Header>
-      <Main background="brand">
-        <Box height="80vh" fill="horizontal"></Box>
+      <Main>
+        <Box height="80vh" fill="horizontal">
+          <Carousel fill play={5000} controls="selectors">
+            <Image
+              fit="cover"
+              src="//v2.grommet.io/assets/Wilderpeople_Ricky.jpg"
+            />
+            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4245.jpg" />
+            <Image fit="cover" src="//v2.grommet.io/assets/IMG_4210.jpg" />
+          </Carousel>
+        </Box>
       </Main>
       <Footer background="accent-1" height="11vh"></Footer>
     </Box>
