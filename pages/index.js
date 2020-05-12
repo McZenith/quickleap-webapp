@@ -82,7 +82,7 @@ const Home = () => {
         </Box>
       </Header>
       <Main>
-        <Box height="80vh" fill="horizontal">
+        <Box height={"80vh"} fill="horizontal">
           <Carousel fill play={5000} controls="selectors">
             <Box
               background={{
@@ -138,6 +138,7 @@ const styles = {
   footer: {
     position: "fixed",
     bottom: 0,
+    width: "100%",
   },
 };
 
