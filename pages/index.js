@@ -81,8 +81,8 @@ const Home = () => {
           )}
         </Box>
       </Header>
-      <Main>
-        <Box height={"80vh"} fill="horizontal">
+      <Main height="80vh">
+        <Box height="100%" width="100%">
           <Carousel fill play={5000} controls="selectors">
             <Box
               background={{
@@ -125,7 +125,18 @@ const Home = () => {
           </Carousel>
         </Box>
       </Main>
-      <Footer height="100%" style={footer}></Footer>
+      <Footer
+        height="11vh"
+        width="100%"
+        style={footer}
+        as="div"
+        background="brand"
+        align="center"
+        justify="center"
+        alignSelf="end"
+      >
+        <p>Hello</p>
+      </Footer>
     </Box>
   );
 };
