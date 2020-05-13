@@ -22,7 +22,7 @@ const NavLinks = [
   { title: "Marketplace", urlname: "null" },
   { title: "Inventory Manager", urlname: "null" },
   { title: "Aggregator", urlname: "null" },
-  { title: "Login/Sign Up", urlname: "null" },
+  { title: "Login/Sign Up", urlname: "account" },
   { title: "Blog", urlname: "null" },
 ];
 
