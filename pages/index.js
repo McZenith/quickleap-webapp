@@ -17,13 +17,13 @@ import {
 import { Menu } from "grommet-icons";
 
 const NavLinks = [
-  { title: "Home" },
-  { title: "About" },
-  { title: "Marketplace" },
-  { title: "Inventory Manager" },
-  { title: "Aggregator" },
-  { title: "Login/Sign Up" },
-  { title: "Blog" },
+  { title: "Home", urlname: "null" },
+  { title: "About", urlname: "about" },
+  { title: "Marketplace", urlname: "null" },
+  { title: "Inventory Manager", urlname: "null" },
+  { title: "Aggregator", urlname: "null" },
+  { title: "Login/Sign Up", urlname: "null" },
+  { title: "Blog", urlname: "null" },
 ];
 
 const Home = () => {
@@ -63,8 +63,8 @@ const Home = () => {
                     pad="medium"
                     elevation="medium"
                   >
-                    {NavLinks.map(({ title }, index) => (
-                      <Link href={`/${title}`} key={index}>
+                    {NavLinks.map(({ title, urlname }, index) => (
+                      <Link href={`/${urlname}`} key={index}>
                         <a style={link}>{title}</a>
                       </Link>
                     ))}
@@ -73,16 +73,16 @@ const Home = () => {
               )}
             </Box>
           ) : (
-            NavLinks.map(({ title }, index) => (
-              <Link href={`/${title}`} key={index}>
+            NavLinks.map(({ title, urlname }, index) => (
+              <Link href={`/${urlname}`} key={index}>
                 <a style={link}>{title}</a>
               </Link>
             ))
           )}
         </Box>
       </Header>
-      <Main height="80vh">
-        <Box height="100%" width="100%">
+      <Main>
+        <Box height="80vh" width="100%">
           <Carousel fill play={5000} controls="selectors">
             <Box
               background={{
@@ -94,8 +94,8 @@ const Home = () => {
               }}
               justify="center"
               align="center"
-              fill
               pad="medium"
+              height="100%"
             >
               <h1>Hello World</h1>
               <p style={{ textAlign: "center" }}>
@@ -113,8 +113,8 @@ const Home = () => {
               }}
               justify="center"
               align="center"
-              fill
               pad="medium"
+              height="100%"
             >
               <h1>Random Text</h1>
               <p style={{ textAlign: "center" }}>
