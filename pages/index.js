@@ -125,7 +125,7 @@ const Home = () => {
           </Carousel>
         </Box>
       </Main>
-      <Footer height="11vh" style={footer}></Footer>
+      <Footer height="100%" style={footer}></Footer>
     </Box>
   );
 };
@@ -137,8 +137,8 @@ const styles = {
   },
   footer: {
     position: "fixed",
+    left: 0,
     bottom: 0,
-    width: "100%",
   },
 };
 
