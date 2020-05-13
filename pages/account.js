@@ -17,7 +17,6 @@ const Account = () => {
   return (
     <Box
       fill
-      background="brand"
       direction="row"
       justify={size === "small" ? "center" : null}
       align={size === "small" ? "center" : null}
@@ -26,7 +25,6 @@ const Account = () => {
         <Box background="accent-1" width="50vw" fill="vertical"></Box>
       ) : null}
       <Box
-        background="accent-2"
         width={size === "small" ? "97vw" : "50vw"}
         fill="vertical"
         justify="center"
@@ -35,7 +33,6 @@ const Account = () => {
         <Box
           height="80vh"
           width={size === "small" ? "95%" : "60%"}
-          background="brand"
           justify="center"
           align="center"
           direction="column"
@@ -46,7 +43,7 @@ const Account = () => {
           </Box>
           <Box
             height="5vh"
-            width={size === "small" ? "98%" : "80%"}
+            width={size === "small" ? "95%" : "80%"}
             background="black"
             pad="xsmall"
             justify="center"
@@ -60,39 +57,39 @@ const Account = () => {
             Please enter your valid credentials to continue
           </Paragraph>
           <Box
-            width={size === "small" ? "98%" : "80%"}
+            width={size === "small" ? "96%" : "80%"}
             height="60%"
             justify="center"
             align="center"
             elevation="medium"
             margin="medium"
           >
-            <Box width={size === "small" ? "98%" : "80%"} margin="small">
+            <Box width={size === "small" ? "95%" : "80%"} margin="small">
               <TextInput
                 placeholder="type here"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
               />
             </Box>
-            <Box width={size === "small" ? "98%" : "80%"}>
+            <Box width={size === "small" ? "95%" : "80%"}>
               <TextInput
                 placeholder="type here"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
               />
             </Box>
-            <Box width={size === "small" ? "98%" : "80%"} margin="small">
+            <Box width={size === "small" ? "95%" : "80%"} margin="small">
               <CheckBox
                 checked={checked}
                 label="Remember me"
                 onChange={(event) => setChecked(event.target.checked)}
               />
             </Box>
-            <Box width={size === "small" ? "98%" : "80%"} margin="small">
-              <Button primary label="label" />
+            <Box width={size === "small" ? "95%" : "80%"} margin="small">
+              <Button primary color="black" label="Login into your Account" />
             </Box>
             <Box direction="row" align="center" justify="stretch">
-              <Box>
+              <Box pad="xsmall" margin={{ top: "xsmall" }}>
                 <Paragraph
                   margin="none"
                   size="small"
@@ -108,6 +105,7 @@ const Account = () => {
                   label="create an account"
                   alignSelf="center"
                   onClick={() => null}
+                  color="green"
                 />
               </Box>
             </Box>
