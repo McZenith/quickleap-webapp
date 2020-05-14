@@ -8,11 +8,14 @@ import {
   ResponsiveContext,
   Anchor,
   Button,
+  RadioButtonGroup,
 } from "grommet";
 
 const Account = () => {
   const [value, setValue] = React.useState("");
   const [checked, setChecked] = React.useState(true);
+  const [signUp, setSignUp] = React.useState(false);
+  const [type, setType] = React.useState("individual");
   const size = React.useContext(ResponsiveContext);
   return (
     <Box
@@ -50,7 +53,7 @@ const Account = () => {
             align="center"
           >
             <Text textAlign="center" alignSelf="center">
-              Sign In
+              {signUp ? "Register" : "Log In"}
             </Text>
           </Box>
           <Paragraph margin="none" size="small" responsive textAlign="center">
@@ -66,27 +69,45 @@ const Account = () => {
           >
             <Box width={size === "small" ? "95%" : "80%"} margin="small">
               <TextInput
-                placeholder="type here"
+                placeholder="enter your phone number or email"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
               />
             </Box>
             <Box width={size === "small" ? "95%" : "80%"}>
               <TextInput
-                placeholder="type here"
+                placeholder="enter your password"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
               />
             </Box>
-            <Box width={size === "small" ? "95%" : "80%"} margin="small">
-              <CheckBox
-                checked={checked}
-                label="Remember me"
-                onChange={(event) => setChecked(event.target.checked)}
-              />
+            <Box
+              width={size === "small" ? "95%" : "80%"}
+              margin="small"
+              direction="row"
+            >
+              {!signUp && (
+                <CheckBox
+                  checked={checked}
+                  label="Remember me"
+                  onChange={(event) => setChecked(event.target.checked)}
+                />
+              )}
+              {signUp && (
+                <RadioButtonGroup
+                  name="doc"
+                  options={["individual", "business"]}
+                  value={type}
+                  onChange={(event) => setType(event.target.value)}
+                />
+              )}
             </Box>
             <Box width={size === "small" ? "95%" : "80%"} margin="small">
-              <Button primary color="black" label="Login into your Account" />
+              <Button
+                primary
+                color="black"
+                label={signUp ? "Register" : "Login into your Account"}
+              />
             </Box>
             <Box direction="row" align="center" justify="stretch">
               <Box pad="xsmall" margin={{ top: "xsmall" }}>
@@ -97,14 +118,16 @@ const Account = () => {
                   alignSelf="center"
                   textAlign="start"
                 >
-                  Don't have an account?{" "}
+                  {signUp
+                    ? "Already have an account?"
+                    : "Don't have an account?"}
                 </Paragraph>
               </Box>
               <Box>
                 <Anchor
-                  label="create an account"
+                  label={signUp ? "Login here" : "create an account"}
                   alignSelf="center"
-                  onClick={() => null}
+                  onClick={() => setSignUp(!signUp)}
                   color="green"
                 />
               </Box>
