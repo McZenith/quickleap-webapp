@@ -170,6 +170,7 @@ const Home = () => {
             align="center"
             width={size === "small" ? "40vw" : "10vw"}
             fill="vertical"
+            background="brand"
           >
             <Text>Live Prices</Text>
           </Box>

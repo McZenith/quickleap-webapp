@@ -1,5 +1,5 @@
 {
-  "name": "with-grommet",
+  "name": "quickleap-webapp",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -13,7 +13,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-multi-carousel": "^2.5.5",
-    "react-siema": "^1.0.1",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
