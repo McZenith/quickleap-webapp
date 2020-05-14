@@ -11,10 +11,12 @@ import {
   Image,
   Layer,
   ResponsiveContext,
-  Carousel,
+  Carousel as Carouslick,
   Button,
 } from "grommet";
 import { Menu } from "grommet-icons";
+import Carousel from "react-multi-carousel";
+import { Image as ImageCom } from "../components";
 
 const NavLinks = [
   { title: "Home", urlname: "null" },
@@ -26,10 +28,40 @@ const NavLinks = [
   { title: "Blog", urlname: "null" },
 ];
 
+const images = [
+  "https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1549396535-c11d5c55b9df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550133730-695473e544be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550167164-1b67c2be3973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550338861-b7cfeaf8ffd8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550223640-23097fc71cb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550353175-a3611868086b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550330039-a54e15ed9d33?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1549737328-8b9f3252b927?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1549833284-6a7df91c1f65?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+  "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+];
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 6,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
+
 const Home = () => {
   const size = React.useContext(ResponsiveContext);
   const [show, setShow] = React.useState();
   const { link, footer } = styles;
+
   return (
     <Box>
       <Header fill="horizontal" height="9vh" pad="medium" elevation="medium">
@@ -83,7 +115,7 @@ const Home = () => {
       </Header>
       <Main>
         <Box height="80vh" width="100%">
-          <Carousel fill play={5000} controls="selectors">
+          <Carouslick fill play={5000} controls="selectors">
             <Box
               background={{
                 color: "neutral-1",
@@ -122,7 +154,7 @@ const Home = () => {
               </p>
               <Button label="show" onClick={() => setShow(true)} />
             </Box>
-          </Carousel>
+          </Carouslick>
         </Box>
       </Main>
       <Footer
@@ -130,12 +162,35 @@ const Home = () => {
         width="100%"
         style={footer}
         as="div"
-        background="brand"
-        align="center"
-        justify="center"
         alignSelf="end"
       >
-        <p>Hello</p>
+        <Box height="100%" width="100%" direction="row">
+          <Box
+            justify="start"
+            align="center"
+            width={size === "small" ? "40vw" : "10vw"}
+            fill="vertical"
+          >
+            <Text>Live Prices</Text>
+          </Box>
+          <Box fill="vertical" width="90vw">
+            <Carousel
+              responsive={responsive}
+              ssr
+              showDots={false}
+              infinite
+              autoPlay
+              arrows={false}
+              autoPlaySpeed="5000"
+              customTransition="all .5"
+              transitionDuration={5000}
+            >
+              {images.map((image) => {
+                return <ImageCom url={image} alt={image} key={image} />;
+              })}
+            </Carousel>
+          </Box>
+        </Box>
       </Footer>
     </Box>
   );

@@ -2,6 +2,8 @@ import React from "react";
 import App from "next/app";
 import Head from "next/head";
 import { Grommet, grommet as grommetTheme, extendDefaultTheme } from "grommet";
+import "../style.css";
+import "react-multi-carousel/lib/styles.css";
 
 const customTheme = {
   global: {},
