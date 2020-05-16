@@ -183,7 +183,7 @@ const Home = () => {
           <Box
             justify="center"
             align="center"
-            width={size === "small" ? "40vw" : "13vw"}
+            width={size === "small" ? "60vw" : "13vw"}
             fill="vertical"
             background="black"
             pad="small"
