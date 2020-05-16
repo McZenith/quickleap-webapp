@@ -16,7 +16,7 @@ import {
 } from "grommet";
 import { Menu } from "grommet-icons";
 import Carousel from "react-multi-carousel";
-import { Image as ImageCom } from "../components";
+import { Image as ImageCom, Update } from "../components";
 
 const NavLinks = [
   { title: "Home", urlname: "null" },
@@ -42,10 +42,25 @@ const images = [
   "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
 ];
+const updata = [
+  { price: "5000", percentage: "-40%", product: "Soybeans" },
+  { price: "2000", percentage: "-2%", product: "Rice" },
+  { price: "9000", percentage: "-0.03%", product: "Maize" },
+  { price: "4000", percentage: "40%", product: "Beans" },
+  { price: "6000", percentage: "4%", product: "Garri" },
+  { price: "55000", percentage: "0%", product: "Casava" },
+  { price: "44000", percentage: "40%", product: "Soghurm" },
+  { price: "33000", percentage: "20%", product: "brreds" },
+  { price: "22000", percentage: "-0.40%", product: "rubbish" },
+  { price: "33000", percentage: "-2.0%", product: "yoghurt" },
+  { price: "2000", percentage: "-3.0%", product: "Soyagum" },
+  { price: "1000", percentage: "40%", product: "whitebeans" },
+  { price: "14000", percentage: "400%", product: "Sweetcorn" },
+];
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 6,
+    items: 7,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
@@ -164,15 +179,16 @@ const Home = () => {
         as="div"
         alignSelf="end"
       >
-        <Box height="100%" width="100%" direction="row">
+        <Box height="100%" width="100%" direction="row" align="center">
           <Box
-            justify="start"
+            justify="center"
             align="center"
-            width={size === "small" ? "40vw" : "10vw"}
+            width={size === "small" ? "40vw" : "13vw"}
             fill="vertical"
-            background="brand"
+            background="black"
+            pad="small"
           >
-            <Text>Live Prices</Text>
+            <Text alignSelf="center">LIVE MARKET PRICES</Text>
           </Box>
           <Box fill="vertical" width="90vw">
             <Carousel
@@ -186,8 +202,14 @@ const Home = () => {
               customTransition="all .5"
               transitionDuration={5000}
             >
-              {images.map((image) => {
-                return <ImageCom url={image} alt={image} key={image} />;
+              {updata.map(({ product, price, percentage }) => {
+                return (
+                  <Update
+                    product={product}
+                    price={price}
+                    percentage={percentage}
+                  />
+                );
               })}
             </Carousel>
           </Box>
