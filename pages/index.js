@@ -16,7 +16,7 @@ import {
 } from "grommet";
 import { Menu } from "grommet-icons";
 import Carousel from "react-multi-carousel";
-import { Image as ImageCom } from "../components";
+import { Image as ImageCom, Update } from "../components";
 
 const NavLinks = [
   { title: "Home", urlname: "null" },
@@ -56,6 +56,22 @@ const responsive = {
     items: 1,
   },
 };
+
+const updata = [
+  { price: "5000", percentage: "-40%", product: "Soybeans" },
+  { price: "2000", percentage: "-2%", product: "Rice" },
+  { price: "9000", percentage: "-0.03%", product: "Maize" },
+  { price: "4000", percentage: "40%", product: "Beans" },
+  { price: "6000", percentage: "4%", product: "Garri" },
+  { price: "55000", percentage: "0%", product: "Casava" },
+  { price: "44000", percentage: "40%", product: "Soghurm" },
+  { price: "33000", percentage: "20%", product: "Breeds" },
+  { price: "22000", percentage: "-0.40%", product: "Rubbish" },
+  { price: "33000", percentage: "-2.0%", product: "Yoghurt" },
+  { price: "2000", percentage: "-3.0%", product: "Soyagum" },
+  { price: "1000", percentage: "40%", product: "Whitebeans" },
+  { price: "14000", percentage: "400%", product: "Sweetcorn" },
+];
 
 const Home = () => {
   const size = React.useContext(ResponsiveContext);
@@ -164,15 +180,22 @@ const Home = () => {
         as="div"
         alignSelf="end"
       >
-        <Box height="100%" width="100%" direction="row">
+        <Box
+          height="100%"
+          width="100%"
+          direction="row"
+          align="center"
+          background="white"
+        >
           <Box
-            justify="start"
+            justify="center"
             align="center"
-            width={size === "small" ? "40vw" : "10vw"}
+            width={size === "small" ? "40vw" : "13vw"}
             fill="vertical"
-            background="brand"
+            background="black"
+            pad="small"
           >
-            <Text>Live Prices</Text>
+            <Text>LIVE MARKET PRICES</Text>
           </Box>
           <Box fill="vertical" width="90vw">
             <Carousel
@@ -183,11 +206,18 @@ const Home = () => {
               autoPlay
               arrows={false}
               autoPlaySpeed="5000"
-              customTransition="all .5"
-              transitionDuration={5000}
+              customTransition="all .05"
+              transitionDuration={50000}
             >
-              {images.map((image) => {
-                return <ImageCom url={image} alt={image} key={image} />;
+              {updata.map(({ price, percentage, product }) => {
+                return (
+                  <Update
+                    price={price}
+                    percentage={percentage}
+                    product={product}
+                    key={`${product}${price}`}
+                  />
+                );
               })}
             </Carousel>
           </Box>
