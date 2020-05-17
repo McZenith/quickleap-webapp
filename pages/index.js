@@ -1,16 +1,22 @@
+import Link from "next/link";
 import {
+  Main,
   Box,
+  Header,
+  Paragraph,
+  Heading,
+  Footer,
+  Text,
+  Anchor,
+  Image,
+  Layer,
   ResponsiveContext,
   Carousel as Carouslick,
   Button,
 } from "grommet";
-<<<<<<< HEAD
 import { Menu } from "grommet-icons";
 import Carousel from "react-multi-carousel";
 import { Image as ImageCom, Update } from "../components";
-=======
-import { HomeLayout } from "../containers";
->>>>>>> 7f835b1c2e5f0cd4d89a1647a1ddafe147eed193
 
 const NavLinks = [
   { title: "Home", urlname: "null" },
@@ -18,7 +24,7 @@ const NavLinks = [
   { title: "Marketplace", urlname: "null" },
   { title: "Inventory Manager", urlname: "null" },
   { title: "Aggregator", urlname: "null" },
-  { title: "Login/SignUp", urlname: "account" },
+  { title: "Login/Sign Up", urlname: "account" },
   { title: "Blog", urlname: "null" },
 ];
 
@@ -36,6 +42,20 @@ const images = [
   "https://images.unsplash.com/photo-1549985908-597a09ef0a7c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
   "https://images.unsplash.com/photo-1550064824-8f993041ffd3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
 ];
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 6,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 const updata = [
   { price: "5000", percentage: "-40%", product: "Soybeans" },
@@ -55,9 +75,10 @@ const updata = [
 
 const Home = () => {
   const size = React.useContext(ResponsiveContext);
+  const [show, setShow] = React.useState();
+  const { link, footer } = styles;
 
   return (
-<<<<<<< HEAD
     <Box>
       <Header fill="horizontal" height="9vh" pad="medium" elevation="medium">
         <Box width="100px">
@@ -185,8 +206,8 @@ const Home = () => {
               autoPlay
               arrows={false}
               autoPlaySpeed="5000"
-              customTransition="all .05"
-              transitionDuration={50000}
+              customTransition="all .5"
+              transitionDuration={5000}
             >
               {updata.map(({ price, percentage, product }) => {
                 return (
@@ -199,53 +220,23 @@ const Home = () => {
                 );
               })}
             </Carousel>
-=======
-    <HomeLayout size={size} NavLinks={NavLinks}>
-      <Box fill>
-        <Carouslick fill play={5000} controls="selectors">
-          <Box
-            background={{
-              color: "neutral-1",
-              position: "center",
-              repeat: "no-repeat",
-              size: "100% 100%",
-              image: "url(//v2.grommet.io/assets/IMG_4210.jpg)",
-            }}
-            justify="center"
-            align="center"
-            pad="medium"
-            height="100%"
-          >
-            <h1>Hello World</h1>
-            <p style={{ textAlign: "center" }}>
-              lorem ipsum adn hsnw b dhhheheh hddhd d
-            </p>
-            <Button label="show" onClick={() => setShow(true)} />
           </Box>
-          <Box
-            background={{
-              color: "neutral-1",
-              position: "center",
-              repeat: "no-repeat",
-              size: "100% 100%",
-              image: "url(//v2.grommet.io/assets/Wilderpeople_Ricky.jpg)",
-            }}
-            justify="center"
-            align="center"
-            pad="medium"
-            height="100%"
-          >
-            <h1>Random Text</h1>
-            <p style={{ textAlign: "center" }}>
-              lorem ipsum adn hsnw b dhhheheh hddhd d
-            </p>
-            <Button label="show" primary />
->>>>>>> 7f835b1c2e5f0cd4d89a1647a1ddafe147eed193
-          </Box>
-        </Carouslick>
-      </Box>
-    </HomeLayout>
+        </Box>
+      </Footer>
+    </Box>
   );
+};
+
+const styles = {
+  link: {
+    textDecoration: "none",
+    color: "black",
+  },
+  footer: {
+    position: "fixed",
+    left: 0,
+    bottom: 0,
+  },
 };
 
 export default Home;
