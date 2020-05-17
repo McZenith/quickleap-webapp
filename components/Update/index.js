@@ -15,7 +15,11 @@ const Update = ({ price, percentage, product }) => {
           >
             {percentage}
           </Text>
-          {checksign(percentage) ? <LinkDown color="red" /> : <LinkUp color="green"/>}
+          {checksign(percentage) ? (
+            <LinkDown color="red" />
+          ) : (
+            <LinkUp color="green" />
+          )}
         </Box>
       </Box>
     </Box>
