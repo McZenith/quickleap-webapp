@@ -16,7 +16,7 @@ import {
 } from "grommet";
 import { Menu } from "grommet-icons";
 import Carousel from "react-multi-carousel";
-import { Image as ImageCom, Update } from "../components";
+import { Update } from "../components";
 
 const NavLinks = [
   { title: "Home", urlname: "null" },
