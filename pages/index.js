@@ -22,7 +22,7 @@ const NavLinks = [
   { title: "Marketplace", urlname: "null" },
   { title: "Inventory Manager", urlname: "null" },
   { title: "Aggregator", urlname: "null" },
-  { title: "Login/Sign Up", urlname: "account" },
+  { title: "Login/SignUp", urlname: "account" },
   { title: "Blog", urlname: "null" },
 ];
 
@@ -187,10 +187,10 @@ const Home = () => {
           <Box
             justify="center"
             align="center"
-            width={size === "small" ? "40vw" : "13vw"}
+            width={size === "small" ? "50vw" : "14vw"}
             fill="vertical"
             background="black"
-            pad="small"
+            pad="medium"
           >
             <Text>LIVE MARKET PRICES</Text>
           </Box>
@@ -202,9 +202,9 @@ const Home = () => {
               infinite
               autoPlay
               arrows={false}
-              autoPlaySpeed="5000"
-              customTransition="all .5"
-              transitionDuration={5000}
+              autoPlaySpeed="3000"
+              customTransition="all 0.5"
+              transitionDuration={3000}
             >
               {updata.map(({ price, percentage, product }) => {
                 return (
