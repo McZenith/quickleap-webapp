@@ -3,8 +3,6 @@ import {
   Main,
   Box,
   Header,
-  Paragraph,
-  Heading,
   Footer,
   Text,
   Anchor,
@@ -77,7 +75,6 @@ const Home = () => {
   const size = React.useContext(ResponsiveContext);
   const [show, setShow] = React.useState();
   const { link, footer } = styles;
-
   return (
     <Box>
       <Header fill="horizontal" height="9vh" pad="medium" elevation="medium">
