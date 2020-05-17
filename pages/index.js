@@ -36,46 +36,48 @@ const Home = () => {
 
   return (
     <HomeLayout size={size} NavLinks={NavLinks}>
-      <Carouslick fill play={5000} controls="selectors">
-        <Box
-          background={{
-            color: "neutral-1",
-            position: "center",
-            repeat: "no-repeat",
-            size: "100% 100%",
-            image: "url(//v2.grommet.io/assets/IMG_4210.jpg)",
-          }}
-          justify="center"
-          align="center"
-          pad="medium"
-          height="100%"
-        >
-          <h1>Hello World</h1>
-          <p style={{ textAlign: "center" }}>
-            lorem ipsum adn hsnw b dhhheheh hddhd d
-          </p>
-          <Button label="show" onClick={() => setShow(true)} />
-        </Box>
-        <Box
-          background={{
-            color: "neutral-1",
-            position: "center",
-            repeat: "no-repeat",
-            size: "100% 100%",
-            image: "url(//v2.grommet.io/assets/Wilderpeople_Ricky.jpg)",
-          }}
-          justify="center"
-          align="center"
-          pad="medium"
-          height="100%"
-        >
-          <h1>Random Text</h1>
-          <p style={{ textAlign: "center" }}>
-            lorem ipsum adn hsnw b dhhheheh hddhd d
-          </p>
-          <Button label="show" primary />
-        </Box>
-      </Carouslick>
+      <Box fill>
+        <Carouslick fill play={5000} controls="selectors">
+          <Box
+            background={{
+              color: "neutral-1",
+              position: "center",
+              repeat: "no-repeat",
+              size: "100% 100%",
+              image: "url(//v2.grommet.io/assets/IMG_4210.jpg)",
+            }}
+            justify="center"
+            align="center"
+            pad="medium"
+            height="100%"
+          >
+            <h1>Hello World</h1>
+            <p style={{ textAlign: "center" }}>
+              lorem ipsum adn hsnw b dhhheheh hddhd d
+            </p>
+            <Button label="show" onClick={() => setShow(true)} />
+          </Box>
+          <Box
+            background={{
+              color: "neutral-1",
+              position: "center",
+              repeat: "no-repeat",
+              size: "100% 100%",
+              image: "url(//v2.grommet.io/assets/Wilderpeople_Ricky.jpg)",
+            }}
+            justify="center"
+            align="center"
+            pad="medium"
+            height="100%"
+          >
+            <h1>Random Text</h1>
+            <p style={{ textAlign: "center" }}>
+              lorem ipsum adn hsnw b dhhheheh hddhd d
+            </p>
+            <Button label="show" primary />
+          </Box>
+        </Carouslick>
+      </Box>
     </HomeLayout>
   );
 };
