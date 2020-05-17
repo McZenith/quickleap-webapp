@@ -10,12 +10,12 @@ const Update = ({ price, percentage, product }) => {
         <Box direction="row">
           <Text>N{price} </Text>
           <Text
-            color={checksign(percentage) ? "red" : "black"}
+            color={checksign(percentage) ? "red" : "green"}
             margin={{ left: "small" }}
           >
             {percentage}
           </Text>
-          {checksign(percentage) ? <LinkDown /> : <LinkUp />}
+          {checksign(percentage) ? <LinkDown color="red" /> : <LinkUp color="green"/>}
         </Box>
       </Box>
     </Box>
